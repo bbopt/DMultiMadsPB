@@ -18,7 +18,7 @@
 function [F] = Deb513(x);
     % parameters
     beta = 1;
-    alpha = 4;
+    alpha = 2;
     q = 4;
 
     f(1) = x(1);
