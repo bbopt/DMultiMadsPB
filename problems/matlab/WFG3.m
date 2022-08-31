@@ -42,7 +42,7 @@ function [F] = WFG3(x);
 
     % second level mapping
     AA = 2;
-    t2 = ones(k + l/2, 1);
+    t2 = zeros(k + l/2, 1);
     t2(1:k) = t1(1:k);
     for i=k+1:k + l/2
         for ii=(k+2*(i-k)-1):(k+2*(i-k))
@@ -72,7 +72,7 @@ function [F] = WFG3(x);
     h = ones(M, 1);
     h(1) = prod(xtmp(1:M-1));
     for m=2:M-1
-        h(m) = prod(xtmp(1:M-1)) * (1 - xtmp(M-m+1));
+        h(m) = prod(xtmp(1:M-m)) * (1 - xtmp(M-m+1));
     end
     h(M) = 1 - xtmp(1);
 

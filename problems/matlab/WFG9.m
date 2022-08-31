@@ -70,7 +70,7 @@ function [F] = WFG9(x);
         t3(i) = t3(i) / (((i*k/(M-1))-((i-1)*k/(M-1)+1)+1)/(k/(M-1))*ceil(k/(M-1)/2)*(1+2*k/(M-1)-2*ceil(k/(M-1)/2)));
     end
     for ii=k+1:n
-        t3(M) = t3(M) + t2(M);
+        t3(M) = t3(M) + t2(ii);
         for jj=0:l-2
             t3(M) = t3(M) + abs(t2(ii) - t2(k+1+ mod(ii+jj-(k+1)+1, n-k)));
         end
@@ -84,11 +84,11 @@ function [F] = WFG9(x);
 
     % Define objective function function h
     h = ones(M, 1);
-    h(1) = prod(sin(xtmp(1:M-1) * pi^2));
+    h(1) = prod(sin(xtmp(1:M-1) * (pi/2)));
     for m=2:M-1
-        h(m) = prod(sin(xtmp(1:M-1) * pi^2)) * cos(xtmp(M-m+1) * pi^2);
+        h(m) = prod(sin(xtmp(1:M-m) * (pi/2))) * cos(xtmp(M-m+1) * (pi/2));
     end
-    h(M) = cos(xtmp(1) * pi^2);
+    h(M) = cos(xtmp(1) * (pi/2));
 
     % The objective functions
     f(1:M) = xtmp(M) + S(1:M) .* h(1:M);

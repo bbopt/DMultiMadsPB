@@ -42,7 +42,7 @@ function WFG2(x)
 
     # second level mapping
     AA = 2;
-    t2 = ones(k + div(l, 2));
+    t2 = zeros(k + div(l, 2));
     t2[1:k] = t1[1:k];
     for i in k+1:k + div(l, 2)
         for ii in (k+2*(i-k)-1):(k+2*(i-k))
@@ -73,9 +73,9 @@ function WFG2(x)
     beta = 1;
     AAAA = 5;
     h = ones(M);
-    h[1] = prod((1 .- cos.(pi^2 * xtmp[1:M-1])));
+    h[1] = prod((1 .- cos.((pi/2) * xtmp[1:M-1])));
     for m in 2:M-1
-        h[m] = prod( (1 .- cos.(pi^2 * xtmp[1:M-1])) ) * (1 .- sin(xtmp[M-m+1] * pi^2));
+        h[m] = prod( (1 .- cos.((pi/2) * xtmp[1:M-m])) ) * (1 .- sin(xtmp[M-m+1] * (pi/2)));
     end
     h[M] = 1 - (xtmp[1])^alpha * cos(AAAA * (xtmp[1])^beta * pi)^2;
 
