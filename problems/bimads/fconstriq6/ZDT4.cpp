@@ -82,7 +82,7 @@ int main ( int argc , char ** argv ) {
         {
             bbot[i] = OBJ;
         }
-        bbot[2] = EB;
+        bbot[2] = PB;
         p.set_BB_OUTPUT_TYPE(bbot);
 
         //    p.set_DISPLAY_ALL_EVAL(true);   // displays all evaluations.

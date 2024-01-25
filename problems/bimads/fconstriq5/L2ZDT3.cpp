@@ -129,7 +129,7 @@ int main(int argc, char **argv)
         }
         for (int i = m; i < m+l; ++i)
         {
-            bbot[i] = EB;
+            bbot[i] = PB;
         }
         p.set_BB_OUTPUT_TYPE(bbot);
 
