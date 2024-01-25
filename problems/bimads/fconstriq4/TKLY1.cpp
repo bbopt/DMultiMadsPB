@@ -41,7 +41,7 @@ class TKLY1 : public Multi_Obj_Evaluator
 
             int l = n - 1;
             for (int j =0; j < l; ++j) {
-                NOMAD::Double c = x[j]*x[j] + x[j+1]*x[j+1] + x[j]*x[j+1] - 2*x[j] - 1;
+                NOMAD::Double c = x[j]*x[j] + x[j+1]*x[j+1] + x[j]*x[j+1] - 1;
                 x.set_bb_output(j+2, c); // constraints
             }
 
