@@ -419,7 +419,7 @@ def run_nsgaii_solver_pb(name):
             elif self.type_constraints == 2:
                 out["G"] = (3 - 2 * x[:, 1:n-1]) * x[:, 1:n-1] - x[:, 0:n-2] - 2 * x[:,2:n] + 2.5
             elif self.type_constraints == 3:
-                out["G"] = x[:, 0:n-1]**2 + x[:, 1:n]**2 + x[:, 0:n-1]*x[:,1:n] - 2 * x[:,1:n] + 1
+                out["G"] = x[:, 0:n-1]**2 + x[:, 1:n]**2 + x[:, 0:n-1]*x[:,1:n] - 2 * x[:,0:n-1] - 2 * x[:,1:n] + 1
             elif self.type_constraints == 4:
                 out["G"] = x[:, 0:n-1]**2 + x[:, 1:n]**2 + x[:, 0:n-1]*x[:,1:n] - 1
             elif self.type_constraints == 5:
