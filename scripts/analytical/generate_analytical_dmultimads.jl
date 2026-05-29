@@ -221,7 +221,7 @@ Distributed.@everywhere function get_pb_data_infos()
     dict_problems["MLF2"] = (2, 2, -2 * ones(2), 2 * ones(2))
 
     # MOP1 function
-    dict_problems["MOP1"] = (1, 2, -10^(-5) * ones(1), 10^(5) * ones(1))
+    dict_problems["MOP1"] = (1, 2, -10^(5) * ones(1), 10^(5) * ones(1))
 
     # MOP2 function
     dict_problems["MOP2"] = (4, 2, -4 * ones(4), 4 * ones(4))
